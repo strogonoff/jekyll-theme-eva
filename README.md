@@ -4,7 +4,9 @@ To start:
 
 - Add "jekyll-theme-eva" gem to your Gemfile
 - Specify "jekyll-theme-eva" theme in your site configuration
-- Copy theme’s _plugins directory into your site base directory
+- Manual steps:
+  - drop theme’s _plugins directory into your site base directory
+  - drop theme’s _includes/_responsive_image.html into your site’s _includes
 - Add theme configuration to _config.yml
 - Create _data/albums and populate it with album data
 
@@ -68,7 +70,7 @@ Add these as is:
 
 Album symbols should have equal sides (look OK if resized to fit in a square).
 
-Album data expected in its about.yml:
+Album data expected in its about.yaml:
 
     name: album-name
     priority: 1  # Determines navigation ordering on home page
@@ -82,10 +84,11 @@ Album data expected in its about.yml:
     artwork_list_style: inset multi-column
     # supported: inset multi-column, full-bleed one-column
 
-Artwork data expected in its about.yml is just `name` and `title`, in same YAML format.
+Artwork data expected in its about.yaml is just `name` and `title`, in same YAML format.
 
 ## Customization
 
-- Create _includes/head_symbol_home.html for custom logo/mascot header
-- Create assets/css/style.scss with variables and custom styling rules,
-  place variables before `@import 'jekyll-theme-eva';` and custom rules after
+- Place favicon.svg, favicon.png (64x64px), favicon@4x.png into your site root
+- Place custom logo/mascot code into _includes/head_symbol_home.html
+- Create assets/css/style.scss with variables and custom styling rules.
+  (Place variables before `@import 'jekyll-theme-eva';`, custom rules after)
