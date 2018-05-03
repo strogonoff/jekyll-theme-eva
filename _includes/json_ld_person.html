@@ -1,0 +1,27 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Person",
+    "image": "{{ "favicon@4x.png" | relative_url }}",
+    "jobTitle": "{{ site.job_title }}",
+    {% if site.given_name %}
+    "givenName": "{{ site.given_name }}",
+    {% endif %}
+    {% if site.family_name %}
+    "familyName": "{{ site.family_name }}",
+    {% endif %}
+    {% if site.additional_name %}
+    "additionalName": "{{ site.additional_name }}",
+    {% endif %}
+    "name": "{{ site.full_name }}",
+    {% if site.telephone %}
+    "telephone": "{{ site.phone_number }}",
+    {% endif %}
+    {% if site.url %}
+    "url": "{{ site.url }}",
+    {% endif %}
+    "sameAs": [
+        {% for link in site.social.links %}
+        "{{ link }}"{% if forloop.last == false %},{% endif %}
+        {% endfor %}
+    ]
+}

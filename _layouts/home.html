@@ -1,0 +1,36 @@
+---
+layout: default
+structured_data_include: json_ld_person.html
+---
+
+<header class="home__header" role="banner">
+    <h1 class="name">
+        {{ site.full_name }}
+    </h1>
+    <h2 class="tagline">
+        {{ site.tagline }}
+    </h2>
+</header>
+
+{% include head_symbol_home.html %}
+
+<img class="home__shadowything"
+    src="{{ "assets/img/shadowything@2x.png" | relative_url }}"
+    role="presentation">
+
+<nav class="home__nav" role="navigation">
+    {% assign albums_unsorted = site.data.albums | values %}
+    {% assign albums = albums_unsorted | sort: "about.priority" %}
+    {% for album in albums %}
+        <a class="{{ album.about.name }} nav-item
+                    {{ album.about.home_nav_icon_style }}"
+                href="{{ album.url }}"
+                title="{{ album.about.title }}">
+            <div class="backdrop" role="presentation"></div>
+            <img class="icon"
+                src="{{ album.symbol_path | relative_url }}"
+                role="presentation">
+            <div class="label">{{ album.about.title | downcase }}</div>
+        </a>
+    {% endfor %}
+</nav>

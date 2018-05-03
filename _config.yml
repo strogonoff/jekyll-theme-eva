@@ -1,0 +1,35 @@
+full_name: John Smith
+given_name: John
+family_name: Smith
+job_title: Illustrator
+tagline: here is tagline
+
+url:
+
+phone_number:
+
+social:
+  links:
+    - https://www.instagram.com/anileated/
+
+email: example@example.com
+
+# Or,
+# email_encoded: <encoded string>
+# key: <crypto key>
+
+# google_site_verification: <string>
+
+# Language in the format outlined here:
+# https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+language: en
+
+plugins:
+  - jekyll-responsive-image
+
+responsive_image:
+  template: _includes/_responsive_image.html
+  sizes:
+    - width: 480
+      quality: 80
+    - width: 800

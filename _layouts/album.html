@@ -1,0 +1,36 @@
+---
+layout: default
+---
+
+{% include head_symbol_home.html %}
+
+<header class="album__header" role="banner">
+    <img
+        role="presentation"
+        class="shadowything-top"
+        src="{{ "assets/img/shadowything-top@2x.png" | relative_url }}">
+
+    <div class="brand" role="presentation">
+        <nav class="author">
+            <a href="/" title="Return to the main page">{{ site.given_name }}’s</a>
+        </nav>
+        <h1 class="album-title">{{ page.about.title | downcase }}</h1>
+        <p class="album-desc">{{ page.about.description }}</p>
+    </div>
+</header>
+
+<section class="album__artwork {{ page.about.artwork_list_style }}">
+    {% for artwork in page.artwork %}
+        {% assign artwork_data = artwork[1] %}
+        {% assign item = artwork_data.items[0] %}
+        <article class="item" title="{{ artwork_data.about.title }}">
+            {% if item.path contains ".svg" %}
+                <img src="{{ item.path | relative_url }}">
+            {% else %}
+                {% responsive_image_block %}
+                    path: {{ item.source_path }}
+                {% endresponsive_image_block %}
+            {% endif %}
+        </article>
+    {% endfor %}
+</section>

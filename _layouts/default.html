@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="{{ language }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.about.title %}{{ page.about.title }} — {% endif %}{{ site.full_name }}: {{ site.tagline }}</title>
+
+    {% if site.google_site_verification %}
+        <meta
+            name="google-site-verification"
+            content="{{ site.google_site_verification }}">
+    {% endif %}
+
+    {% if page.structured_data_include or layout.structured_data_include %}
+        <script type="application/ld+json">
+            {% if page.structured_data_include %}
+                {% include {{ page.structured_data_include }} %}
+            {% else %}
+                {% include {{ layout.structured_data_include }} %}
+            {% endif %}
+        </script>
+    {% endif %}
+
+    {% include _icon_head_links.html %}
+
+    {% comment %}Outdated browser detection & update prompt bootstrap{% endcomment %}
+    <script>
+        (function () {
+            function $buo_f() {
+                var e = document.createElement("script");
+                e.src = "{{ "assets/js/browser-update.js" | relative_url }}";
+                document.body.appendChild(e);
+            };
+            try {document.addEventListener("DOMContentLoaded", $buo_f, false)}
+            catch(e) {window.attachEvent("onload", $buo_f)}
+        }());
+    </script>
+
+    {% comment %}Email{% endcomment %}
+    <script>
+        (function () {
+            window.emailc = '{{ site.email_encoded }}:{{ site.key }}';
+        }());
+    </script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/solid.js" integrity="sha384-Q7KAHqDd5trmfsv85beYZBsUmw0lsreFBQZfsEhzUtUn5HhpjVzwY0Aq4z8DY9sA" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/fontawesome.js" integrity="sha384-M2FSA4xMm1G9m4CNXM49UcDHeWcDZNucAlz1WVHxohug0Uw1K+IpUhp/Wjg0y6qG" crossorigin="anonymous"></script>
+
+    <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ "assets/css/style.css" | relative_url }}">
+</head>
+
+<body class="layout-{{ page.layout }} name-{{ page.about.name }}">
+
+    <main>
+
+{{ content }}
+
+        <footer class="footer">
+            <nav class="social fa-2x" aria-label="Social links & contact channels">
+                {% for link in site.social.links %}
+                    <a href="{{ link }}" class="ico">
+                        <span class="fa-layers">
+                            <i class="fas fa-circle"></i>
+                            <i class="fab
+                                    {% if link contains "twitter.com" %}
+                                        fa-twitter
+                                    {% elsif link contains "github.com" %}
+                                        fa-github
+                                    {% elsif link contains "facebook.com" %}
+                                        fa-facebook
+                                    {% elsif link contains "tumblr.com" %}
+                                        fa-tumblr
+                                    {% elsif link contains "instagram.com" %}
+                                        fa-instagram
+                                    {% endif %}
+                                " data-fa-transform="shrink-6"></i>
+                        </span>
+                    </a>
+                {% endfor %}
+
+                {% if site.email_encoded or site.email %}
+                    <a class="ico" title="Email"
+                        {% if site.email_encoded %}
+                            href=""
+                            data-fill-email
+                        {% else %}
+                            href="mailto:{{ site.email }}"
+                        {% endif %}>
+                        <span class="fa-layers">
+                            <i class="fas fa-circle"></i>
+                            <i class="fas fa-envelope" data-fa-transform="shrink-8"></i>
+                        </span>
+                    </a>
+                {% endif %}
+            </nav>
+
+            <small class="legal">
+                © 2018 {{ site.full_name }}&emsp;•&emsp;All Rights Reserved
+            </small>
+        </footer>
+    </main>
+
+    <script src="{{ "assets/eva.js" | relative_url }}"></script>
+</body>
