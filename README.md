@@ -24,13 +24,13 @@ Set these to your liking:
 
     phone_number: +1234567890
 
-    # Supported social links: facebook, instagram, tumblr, twitter
     social:
       links:
-        - https://www.instagram.com/anileated/
+        - https://www.instagram.com/<your username>/
+        - https://<your username>.tumblr.com/
+    # Supported social links: facebook, instagram, tumblr, twitter.
 
     email: example@example.com
-
     # Or, for spam protection (TODO: automate email encoding):
     # email_encoded: <encoded string>
     # key: <crypto key>
