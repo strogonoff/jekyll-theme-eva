@@ -8,6 +8,9 @@ To start:
 - Add theme configuration to _config.yml
 - Create _data/albums and populate it with album data
 
+Note:
+uses plugins and Node (Webpack), so not suitable for Github pages auto-build.
+
 ## Configuration (in `_config.yml`)
 
 Set these to your liking:
@@ -65,7 +68,7 @@ Add these as is:
 
 Album symbols should have equal sides (look OK if resized to fit in a square).
 
-Album data to put in its about.yml:
+Album data expected in its about.yml:
 
     name: album-name
     priority: 1  # Determines navigation ordering on home page
@@ -79,13 +82,10 @@ Album data to put in its about.yml:
     artwork_list_style: inset multi-column
     # supported: inset multi-column, full-bleed one-column
 
-Artwork data to put in its about.yml is name and title, in same YAML format.
+Artwork data expected in its about.yml is just `name` and `title`, in same YAML format.
 
-Customization:
+## Customization
 
 - Create _includes/head_symbol_home.html for custom logo/mascot header
 - Create assets/css/style.scss with variables and custom styling rules,
   place variables before `@import 'jekyll-theme-eva';` and custom rules after
-
-Note:
-uses plugins and Node (Webpack), so not suitable for Github pages auto-build.
