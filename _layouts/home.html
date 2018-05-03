@@ -24,7 +24,7 @@ structured_data_include: json_ld_person.html
     {% for album in albums %}
         <a class="{{ album.about.name }} nav-item
                     {{ album.about.home_nav_icon_style }}"
-                href="{{ album.url }}"
+                href="{{ album.url }}/"
                 title="{{ album.about.title }}">
             <div class="backdrop" role="presentation"></div>
             <img class="icon"
