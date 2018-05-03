@@ -81,7 +81,9 @@ module Jekyll
             @name = "index.html"
 
             self.process(@name)
-            self.read_yaml(File.join(base, "_layouts"), "album.html")
+
+            yaml_path = File.join(base, "_data", "albums", album_data["about"]["name"])
+            self.read_yaml(yaml_path, "about.yaml")
 
             self.data["layout"] = "album"
 

@@ -5,20 +5,28 @@ Jekyll::Hooks.register :site, :after_init do |site|
     system("npm init --yes")
     system("npm install webpack webpack-cli jquery")
   end
+
+  if site.theme
+    # If site.theme is empty, we’re in theme development mode
+    # and no need to copy
+
+    webpack_config = File.join(site.theme.root, 'webpack.config.js')
+    app = File.join(site.theme.root, 'app')
+
+    unless File.file?('webpack.config.js')
+      FileUtils.copy_entry(webpack_config, File.join(site.source, 'webpack.config.js'))
+    end
+    unless File.directory?('app')
+      FileUtils.copy_entry(app, File.join(site.source, 'app'))
+    end
+  end
 end
 
 Jekyll::Hooks.register :site, :post_write do |site|
   p "-- Eva: Building assets with Webpack…"
 
-  if site.theme or site.config["theme_root"]
-    theme_dir = site.config["theme_root"] || site.theme.root
-  else
-    theme_dir = site.source
-  end
-
   out_assets_dir = File.join(site.config["destination"], 'assets')
-  cfg_path = site.config["webpack_config"] || File.join(theme_dir, 'webpack.config.js')
-  system("npx webpack --config #{cfg_path} --context #{theme_dir} --output-path #{out_assets_dir}")
+  system("npx webpack --output-path #{out_assets_dir}")
 
   p "-- Eva: Build complete"
 end
