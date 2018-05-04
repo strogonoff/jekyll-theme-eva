@@ -17,4 +17,11 @@ $(document).ready(() => {
     }
 
     initnav('body', 'a[href^="/"]');
+
+    if (window.gaCode) {
+        window.dataLayer = window.dataLayer || [];
+        const gtag = () => dataLayer.push(arguments);
+        gtag('js', new Date());
+        gtag('config', window.gaCode);
+    }
 });

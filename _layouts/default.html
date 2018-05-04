@@ -43,6 +43,10 @@
     <script>
         (function () {
             window.emailc = '{{ site.email_encoded }}:{{ site.key }}';
+            {% comment %}Google Analytics{% endcomment %}
+            {% if site.google_analytics_code %}
+            window.gaCode = '{{ site.google_analytics_code }}';
+            {% endif %}
         }());
     </script>
 

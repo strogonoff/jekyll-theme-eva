@@ -19,6 +19,7 @@ email: example@example.com
 # key: <crypto key>
 
 # google_site_verification: <string>
+# google_analytics_code: <string>
 
 # Language in the format outlined here:
 # https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
