@@ -26,30 +26,6 @@
 
     {% include _icon_head_links.html %}
 
-    {% comment %}Outdated browser detection & update prompt bootstrap{% endcomment %}
-    <script>
-        (function () {
-            function $buo_f() {
-                var e = document.createElement("script");
-                e.src = "{{ "assets/js/browser-update.js" | relative_url }}";
-                document.body.appendChild(e);
-            };
-            try {document.addEventListener("DOMContentLoaded", $buo_f, false)}
-            catch(e) {window.attachEvent("onload", $buo_f)}
-        }());
-    </script>
-
-    {% comment %}Email{% endcomment %}
-    <script>
-        (function () {
-            window.emailc = '{{ site.email_encoded }}:{{ site.key }}';
-            {% comment %}Google Analytics{% endcomment %}
-            {% if site.google_analytics_code %}
-            window.gaCode = '{{ site.google_analytics_code }}';
-            {% endif %}
-        }());
-    </script>
-
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/solid.js" integrity="sha384-Q7KAHqDd5trmfsv85beYZBsUmw0lsreFBQZfsEhzUtUn5HhpjVzwY0Aq4z8DY9sA" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/brands.js" integrity="sha384-6jhVhr5a+Z1nLr9h+fd7ocMEo847wnGFelCHddaOOACUeZNoQwFXTxh4ysXVam8u" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/fontawesome.js" integrity="sha384-M2FSA4xMm1G9m4CNXM49UcDHeWcDZNucAlz1WVHxohug0Uw1K+IpUhp/Wjg0y6qG" crossorigin="anonymous"></script>
@@ -57,6 +33,38 @@
     <link href="https://fonts.googleapis.com/css?family=Barlow+Condensed" rel="stylesheet">
 
     <link rel="stylesheet" href="{{ "assets/css/style.css" | relative_url }}">
+
+    {% if site.google_analytics_code %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_code }}"></script>
+    {% endif %}
+
+    <script>
+        (function () {
+            {% comment %}
+            TODO: Move this to an external script parsed with Liquid
+            before assets are build
+            {% endcomment %}
+
+            {% comment %}Outdated browser detection & update prompt bootstrap{% endcomment %}
+            function $buo_f() {
+                var e = document.createElement("script");
+                e.src = "{{ "assets/js/browser-update.js" | relative_url }}";
+                document.body.appendChild(e);
+            };
+            try {document.addEventListener("DOMContentLoaded", $buo_f, false)}
+            catch(e) {window.attachEvent("onload", $buo_f)}
+
+            {% comment %}Email{% endcomment %}
+            {% if site.email_encoded and site.key %}
+            window.emailc = '{{ site.email_encoded }}:{{ site.key }}';
+            {% endif %}
+
+            {% comment %}Google Analytics{% endcomment %}
+            {% if site.google_analytics_code %}
+            window.gaCode = '{{ site.google_analytics_code }}';
+            {% endif %}
+        }());
+    </script>
 </head>
 
 <body class="layout-{{ page.layout }} name-{{ page.about.name }}">
