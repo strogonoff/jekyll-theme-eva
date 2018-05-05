@@ -41,6 +41,8 @@ Set these to your liking:
     # key: <crypto key>
 
     # google_site_verification: <string>
+    # google_analytics_code: <string with dashes, usually begins with UA>
+
 
 Add these as is:
 
