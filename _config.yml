@@ -1,25 +1,16 @@
-full_name: Eva Theme
+# See README for expected site configuration parameters
+
+title_name: Eva
 given_name: Eva
-family_name: Theme
-job_title: Illustrator
-tagline: simple Jekyll-based portfolio
-
-url:
-
-phone_number:
+tagline: Jekyll portfolio theme
 
 social:
   links:
     - https://www.instagram.com/anileated/
 
-email: example@example.com
+url:
 
-# Or,
-# email_encoded: <encoded string>
-# key: <crypto key>
-
-# google_site_verification: <string>
-# google_analytics_code: <string>
+email: eva@strogonoff.name
 
 # Language in the format outlined here:
 # https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
