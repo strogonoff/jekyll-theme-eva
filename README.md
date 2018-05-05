@@ -33,7 +33,7 @@ Set these to your liking:
       links:
         - https://www.instagram.com/<your username>/
         - https://<your username>.tumblr.com/
-    # Supported social links: facebook, instagram, tumblr, twitter.
+    # Supported social links: facebook, instagram, tumblr, twitter, github.
 
     email: example@example.com
     # Or, for spam protection (TODO: automate email encoding):
