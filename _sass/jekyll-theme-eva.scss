@@ -92,10 +92,10 @@ body > main {
 
 .footer {
     position: absolute;
-    width: 260px;
     height: 86px;
     left: calc(50% - 260px/2 + 30px);
     bottom: 0;
+    right: 0;
 
     opacity: 0;
     animation: fade-in 1s both;
