@@ -79,19 +79,29 @@
                     <a href="{{ link }}" class="ico">
                         <span class="fa-layers">
                             <i class="fas fa-circle"></i>
-                            <i class="fab
-                                    {% if link contains "twitter.com" %}
-                                        fa-twitter
-                                    {% elsif link contains "github.com" %}
-                                        fa-github
-                                    {% elsif link contains "facebook.com" %}
-                                        fa-facebook
-                                    {% elsif link contains "tumblr.com" %}
-                                        fa-tumblr
-                                    {% elsif link contains "instagram.com" %}
-                                        fa-instagram
-                                    {% endif %}
-                                " data-fa-transform="shrink-6"></i>
+                            <i
+                                {% if link contains "twitter.com" %}
+                                    class="fab fa-twitter"
+                                    alt="Twitter"
+                                    title="Twitter"
+                                {% elsif link contains "github.com" %}
+                                    class="fab fa-github"
+                                    alt="Github"
+                                    title="Github"
+                                {% elsif link contains "facebook.com" %}
+                                    class="fab fa-facebook"
+                                    alt="Facebook"
+                                    title="Facebook"
+                                {% elsif link contains "tumblr.com" %}
+                                    class="fab fa-tumblr"
+                                    alt="Tumblr"
+                                    title="Tumblr"
+                                {% elsif link contains "instagram.com" %}
+                                    class="fab fa-instagram"
+                                    alt="Instagram"
+                                    title="Instagram"
+                                {% endif %}
+                                data-fa-transform="shrink-6"></i>
                         </span>
                     </a>
                 {% endfor %}
