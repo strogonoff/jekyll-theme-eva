@@ -17,6 +17,8 @@ uses plugins and Node (Webpack), so not suitable for Github pages auto-build.
 
 Set these to your liking:
 
+    # This will be shown everywhere, required
+    title_name:
 
     # This will be included in website data,
     # may be useful for search engines

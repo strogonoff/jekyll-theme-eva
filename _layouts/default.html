@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% if page.about.title %}{{ page.about.title }} — {% endif %}{{ site.full_name }}: {{ site.tagline }}</title>
+    <title>{% if page.about.title %}{{ page.about.title }} — {% endif %}{{ site.title_name }}{% unless page.about.title %}: {{ site.tagline }}{% endunless %}</title>
 
     {% if site.google_site_verification %}
         <meta
@@ -113,7 +113,7 @@
             </nav>
 
             <small class="legal">
-                © 2018 {{ site.full_name }}&emsp;•&emsp;All Rights Reserved
+                © 2018 {% if site.full_name -%}{{ site.full_name }}{%- else -%}{{ site.title_name }}{%- endif -%}&emsp;•&emsp;All Rights Reserved
             </small>
         </footer>
     </main>
