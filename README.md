@@ -21,7 +21,7 @@ Set these to your liking:
     title_name:
 
     # This will be included in website data,
-    # may be useful for search engines
+    # may be useful for search engines & social sharing
     full_name:
     given_name:
     family_name:
@@ -42,7 +42,7 @@ Set these to your liking:
       links:
         - https://www.instagram.com/<your username>/
         - https://<your username>.tumblr.com/
-    # Supported social links: facebook, instagram, tumblr, twitter, github.
+    # Supported social links: Facebook, Instagram, Tumblr, Twitter, Github.
 
     email: example@example.com
     # Or, for spam protection (TODO: automate email encoding):
