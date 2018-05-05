@@ -43,6 +43,9 @@ Set these to your liking:
     # google_site_verification: <string>
     # google_analytics_code: <string with dashes, usually begins with UA>
 
+    # Language in the format outlined here:
+    # https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/lang
+    language: en
 
 Add these as is:
 
