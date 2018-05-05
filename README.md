@@ -20,6 +20,8 @@ Set these to your liking:
     full_name:
     given_name:
     family_name:
+    additional_name:
+
     job_title:
 
     tagline: artist’s jekyll theme
