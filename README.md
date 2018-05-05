@@ -27,6 +27,8 @@ Set these to your liking:
     family_name:
     additional_name:
 
+    # Also useful for search engines & social sites. Keep under 255 characters
+    description: Vector ink & illustration
     job_title:
 
     tagline: artist’s jekyll theme

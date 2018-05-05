@@ -4,6 +4,8 @@ title_name: Eva
 given_name: Eva
 tagline: Jekyll portfolio theme
 
+description: Basic static portfolio site based on Jekyll
+
 social:
   links:
     - https://www.instagram.com/anileated/
