@@ -13,6 +13,8 @@ To start:
 Note:
 uses plugins and Node (Webpack), so not suitable for Github pages auto-build.
 
+See in action: **[Illustrator’s site](https://eval.ee/)**
+
 ## Configuration (in `_config.yml`)
 
 Set these to your liking:
