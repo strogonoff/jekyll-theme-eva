@@ -13,7 +13,7 @@ To start:
 Note:
 uses plugins and Node (Webpack), so not suitable for GitHub Pages auto-build.
 
-See in action: **[Illustrator’s site](https://eval.ee/)**
+See in action: **[Illustrator’s site](https://eval.ee/)** and [its source](https://github.com/strogonoff/eval.ee).
 
 ## Configuration (in `_config.yml`)
 
