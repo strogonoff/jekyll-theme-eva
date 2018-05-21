@@ -1,5 +1,5 @@
 {% assign image_url = "favicon@4x.png" | relative_url %}
-{% assign desc = site.description %}
+{% capture desc %}{% if page.about.seo.description %}{{ page.about.seo.description }}{% else %}{{ site.description }}{% endif %}{% endcapture %}
 {% capture title %}{{ site.title_name }}{% unless page.about.title %}: {{ site.tagline }}{% endunless %}{% endcapture %}
 
 <meta name="twitter:title" content="{{ title }}">

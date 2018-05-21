@@ -92,6 +92,11 @@ Album data expected in its about.yaml:
     title: Album Title
     description: Briefly about this
 
+    # -- This appears in HTML meta,
+    #    and may be used & made visible by search engines:
+    seo:
+      description: Briefly about this, possibly other phrasing than above
+
     # -- This appears in URLs:
     name: album-name
 
