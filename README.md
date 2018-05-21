@@ -11,7 +11,7 @@ To start:
 - Create _data/albums and populate it with album data
 
 Note:
-uses plugins and Node (Webpack), so not suitable for Github pages auto-build.
+uses plugins and Node (Webpack), so not suitable for GitHub Pages auto-build.
 
 See in action: **[Illustrator’s site](https://eval.ee/)**
 
