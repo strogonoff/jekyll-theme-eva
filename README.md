@@ -88,15 +88,18 @@ Album symbols should have equal sides (look OK if resized to fit in a square).
 
 Album data expected in its about.yaml:
 
-    name: album-name
-    priority: 1  # Determines navigation ordering on home page
-
+    # -- This is shown to the visitor:
     title: Album Title
     description: Briefly about this
 
-    home_nav_icon_style: inset
-    # supported: inset, full-bleed
+    # -- This appears in URLs:
+    name: album-name
 
+    # -- This determines appearance of the album on home page:
+    priority: 1  # Ordering relative to other album(s)
+    home_nav_icon_style: inset  # supported: inset, full-bleed
+
+    # -- This determines how album page is laid out:
     artwork_list_style: inset multi-column
     # supported: inset multi-column, full-bleed one-column
 
