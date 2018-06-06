@@ -248,10 +248,17 @@ img.home__shadowything {
     @media screen and (max-width: $w-bp) {
         flex-flow: row wrap;
         width: 250px;
-        height: auto;
         position: relative;
 
+        align-content: flex-start;
+
+        // Below ensures offset from the bottom edge of the viewport.
+        // margin-bottom with height: auto works for Chrome,
+        // while Firefox and Safari require height set explicitly.
+        // This height accounts for fixed number of two albums.
+        height: auto;
         margin-bottom: 150px;
+        height: 700px;
     }
 
 
