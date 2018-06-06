@@ -4,9 +4,8 @@ To start:
 
 - Add "jekyll-theme-eva" gem to your Gemfile
 - Specify "jekyll-theme-eva" theme in your site configuration
-- Manual steps:
-  - drop theme’s _plugins directory into your site base directory
-  - drop theme’s _includes/_responsive_image.html into your site’s _includes
+- Drop theme’s _plugins directory into your site base directory — see issue #3
+- Drop theme’s _includes/_responsive_image.html into your site’s _includes — see issue #3
 - Add theme configuration to _config.yml
 - Create _data/albums and populate it with album data
 
